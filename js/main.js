@@ -1,3 +1,5 @@
+// # È Palidroma?
+
 function isPalindrome(userWord) {
   userWord = userWord.toLowerCase();
 
@@ -19,7 +21,24 @@ function isPalindrome(userWord) {
   return isUserWordPalindrome;
 }
 
-const userWord = prompt("Enter the word to check");
+const userWord = "Anna"; // prompt("Enter the word to check");
 isPalindrome(userWord)
   ? console.log(`\'${userWord}\' is Palindrome`)
   : console.log(`\'${userWord}\' isn't Palindrome`);
+
+// # Pari o Dispari
+
+const userChoice = "Even"; // prompt('"Even" or "Odd" ?');
+const userNumber = 2; // parseInt(prompt('Choose a number from 1 to 5'));
+const pcNumber = randomIntegerInRange(1, 5);
+evenOrOddWinner(userChoice, userNumber, pcNumber)
+  ? console.log(
+      `Opponent number: ${pcNumber} \n Your number: ${userNumber} \n Sum: ${
+        pcNumber + userNumber
+      } \n You Won!`
+    )
+  : console.log(
+      `Opponent number: ${pcNumber} \n Your number: ${userNumber} \n Sum: ${
+        pcNumber + userNumber
+      } \n You Lost!`
+    );
