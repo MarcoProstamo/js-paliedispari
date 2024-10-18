@@ -28,6 +28,10 @@ isPalindrome(userWord)
 
 // # Pari o Dispari
 
+function randomIntegerInRange(min, max) {
+  return Math.floor(Math.random * (max - min + 1)) + min;
+}
+
 const userChoice = "Even"; // prompt('"Even" or "Odd" ?');
 const userNumber = 2; // parseInt(prompt('Choose a number from 1 to 5'));
 const pcNumber = randomIntegerInRange(1, 5);
