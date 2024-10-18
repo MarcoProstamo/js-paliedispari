@@ -21,7 +21,7 @@ function isPalindrome(userWord) {
   return isUserWordPalindrome;
 }
 
-const userWord = "Anna"; // prompt("Enter the word to check");
+const userWord = prompt("Enter the word to check");
 isPalindrome(userWord)
   ? console.log(`\'${userWord}\' is Palindrome`)
   : console.log(`\'${userWord}\' isn't Palindrome`);
@@ -36,7 +36,7 @@ function evenOrOddWinner(evenOrOdd, firstPlayer, secondPlayer) {
   const sum = firstPlayer + secondPlayer;
   const winConditions =
     (evenOrOdd === "Even" && !(sum % 2)) || (evenOrOdd === "Odd" && sum % 2);
-  return winConditions ? true : false;
+  return winConditions;
 }
 
 const userChoice = prompt('"Even" or "Odd" ?');
