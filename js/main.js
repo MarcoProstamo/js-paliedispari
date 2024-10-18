@@ -29,20 +29,27 @@ isPalindrome(userWord)
 // # Pari o Dispari
 
 function randomIntegerInRange(min, max) {
-  return Math.floor(Math.random * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const userChoice = "Even"; // prompt('"Even" or "Odd" ?');
-const userNumber = 2; // parseInt(prompt('Choose a number from 1 to 5'));
+function evenOrOddWinner(evenOrOdd, firstPlayer, secondPlayer) {
+  const sum = firstPlayer + secondPlayer;
+  const winConditions =
+    (evenOrOdd === "Even" && !(sum % 2)) || (evenOrOdd === "Odd" && sum % 2);
+  return winConditions ? true : false;
+}
+
+const userChoice = prompt('"Even" or "Odd" ?');
+const userNumber = parseInt(prompt("Choose a number from 1 to 5"));
 const pcNumber = randomIntegerInRange(1, 5);
 evenOrOddWinner(userChoice, userNumber, pcNumber)
   ? console.log(
-      `Opponent number: ${pcNumber} \n Your number: ${userNumber} \n Sum: ${
+      `Choice: ${userChoice} \n Your Number: ${userNumber} \n Opponent Number: ${pcNumber} \n Sum: ${
         pcNumber + userNumber
       } \n You Won!`
     )
   : console.log(
-      `Opponent number: ${pcNumber} \n Your number: ${userNumber} \n Sum: ${
+      `Choice: ${userChoice} \n Your Number: ${userNumber} \n Opponent Number: ${pcNumber} \n Sum: ${
         pcNumber + userNumber
       } \n You Lost!`
     );
