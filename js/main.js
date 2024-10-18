@@ -1,24 +1,29 @@
 // # È Palidroma?
 
-function isPalindrome(userWord) {
-  userWord = userWord.toLowerCase();
+/**
+ *
+ * Returns true if the string is palidrome, false otherwise
+ *
+ * @param {string} userWord a string to be checked
+ * @returns {boolean}
+ */
+function isPalindrome(str) {
+  str = str.toLowerCase();
 
-  const userWordArray = [];
-  const userReversedWordArray = [];
-  for (let i = 0; i < userWord.length; i++) {
-    const char = userWord.charAt(i);
-    userWordArray.push(char);
-    userReversedWordArray.unshift(char);
+  const strToArray = [];
+  const ReversedStrToArray = [];
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charAt(i);
+    strToArray.push(char);
+    ReversedStrToArray.unshift(char);
   }
 
-  let isUserWordPalindrome = true;
-  for (let i = 0; i < userWordArray.length; i++) {
-    userWordArray[i] !== userReversedWordArray[i]
-      ? (isUserWordPalindrome = false)
-      : null;
+  let isStrPalindrome = true;
+  for (let i = 0; i < strToArray.length; i++) {
+    strToArray[i] !== ReversedStrToArray[i] ? (isStrPalindrome = false) : null;
   }
 
-  return isUserWordPalindrome;
+  return isStrPalindrome;
 }
 
 const userWord = prompt("Enter the word to check");
@@ -28,10 +33,27 @@ isPalindrome(userWord)
 
 // # Pari o Dispari
 
+/**
+ *
+ * Returns a random integer value between "min" and "max"
+ *
+ * @param {number} min minimum of the range
+ * @param {number} max maximum of the range
+ * @returns {number}
+ */
 function randomIntegerInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+/**
+ *
+ * Returns true is the first player has won, false otherwise.
+ *
+ * @param {string} evenOrOdd win condition of the game. Expected value "Even" or "Odd"
+ * @param {number} firstPlayer number choosen from the first player
+ * @param {number} secondPlayer number choosen from the second player
+ * @returns {boolean}
+ */
 function evenOrOddWinner(evenOrOdd, firstPlayer, secondPlayer) {
   const sum = firstPlayer + secondPlayer;
   const winConditions =
